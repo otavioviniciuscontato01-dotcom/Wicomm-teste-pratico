@@ -1,0 +1,1506 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+}
+
+/*navbar pai*/
+.nav-hdr {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  width: 1280px;
+  height: 46px;
+  z-index: 1000;
+}
+
+/*parte branca*/
+.nav-bg-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 100%;
+  background: #f5f5f5;
+  border: 1px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+/*parte preta*/
+.nav-bg-right {
+  position: absolute;
+  top: 0;
+  left: 11%;
+  width: 100%;
+  height: 100%;
+  background: #1E1E1E;
+  border: 1px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+/*logo*/
+.logo {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 110px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 400px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/*botões do lado da logo*/
+.menu-produtos,
+.menu-colecoes {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #f5f5f5;
+  background: #1E1E1E;
+  box-sizing: border-box;
+  padding-left: 10px;
+}
+
+.menu-produtos {
+  left: 10.08%;
+}
+
+.menu-colecoes {
+  left: 21%;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 20px;
+  color: #EFEFEF;
+
+}
+.menu-text span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #9b9b9b;
+  transition: width 0.3s ease;
+}
+
+.menu-text span:hover::after {
+  width: 100%;
+}
+
+/*menu central*/
+.menu-maior {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 297px/2 + 270px);
+  transform: translateY(-50%);
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f5f5f5;
+}
+
+.menu-maior span {
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+/* efeito sublinhado animado */
+.menu-maior span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #bababa;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+.menu-maior span:hover::after {
+  transform: scaleX(1);
+}
+.menu-text:hover {
+  color: #bababa;
+}
+
+.menu-maior span:hover {
+  color: #bababa;
+}
+
+
+/* barra de busca */
+.busca {
+  position: absolute;
+  top: 0;
+  left: 82%;
+  width: 250px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 10px;
+  color: #ffffff;
+  background: #1E1E1E;
+  border: 1px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Sora', sans-serif;
+  font-weight: 100;
+  font-size: 2px;
+  line-height: 14px;
+  color: #f5f5f5;
+}
+
+.search-input::placeholder {
+  color: #aaa;
+}
+
+
+
+/*área de conta*/
+.conta {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 101%;
+  width: 50px;
+  height: 46px;
+  background: #1E1E1E;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/*icone do usuário*/
+.user-icon {
+  width: 24px;
+  height: 24px;
+  background: #1e1e1e;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*carrinho*/
+.carrinho-icon {
+  cursor: pointer;
+  position: relative;
+  left: 1340px;
+  top: 0px;
+  width: 79.8px;
+  height: 46px;
+  background: #1e1e1e;
+  border: 1px solid #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.carrinho-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.notification {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  background: #CC4B64;
+  color: #f5f5f5;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*BANNER PRINCIPAL*/
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.banner-inicial {
+  display: flex;
+  width: 100vw;
+  align-items: stretch; 
+  height: 600px;
+  min-height: 0;
+
+
+}
+
+/*bordas*/
+.bordae {
+  flex-grow: 0; 
+  border-top: 10px solid #f5f5f5;
+  border-bottom: 10px solid #f5f5f5;
+  height: auto;
+  object-fit: cover;
+  width: auto;
+  max-height: 100%; 
+}
+
+.bordad {
+  flex-grow: 1; 
+  border-top: 10px solid #f5f5f5;
+  border-bottom: 10px solid #f5f5f5;
+  height: auto;
+  object-fit: cover;
+  width: auto;
+  max-height: 100%; 
+}
+
+/*banner central*/
+.banner-principal {
+  position: relative;
+  width: 1350px;
+  flex-shrink: 1;
+  max-height: 600px; 
+  overflow: hidden; 
+  
+  border-top: 10px solid #f5f5f5;
+  border-bottom: 10px solid #f5f5f5;
+  border-bottom: 10px solid #1E1E1E;
+  background: #fff;
+
+  box-sizing: border-box;
+}
+
+.banner-principal img {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover; 
+  display: block;
+
+  border-top: none;
+  border-right: 15px solid #f5f5f5;
+  border-left: 15px solid #f5f5f5;
+  box-sizing: border-box;
+}
+
+
+.banner-principal .banner-texto {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 3px);
+  width: 100%;
+  text-align: center;
+  color: #000;
+
+}
+.container {
+  position: relative;
+  height: 500vh; 
+}
+
+/*botão ver coleção*/
+.btn {
+  position: absolute;
+  top: calc(50% + 290px); 
+  left: 50%;
+  transform: translate(-50%, -50%); 
+
+  padding: 20px 30px;
+  border: 1px solid #000000;
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  border-radius: 30px;
+  display: inline-block;
+
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/*beneficios*/
+.beneficios {
+  text-align: center; 
+  z-index: 20;
+}
+
+/*pai das imagens*/
+.img-informações {
+    background-color: #333;
+  position: relative; 
+  display: inline-block;
+  width: 100%; 
+}
+
+/*imagem de fundo*/
+.img-informações .fundo {
+  border: 30px solid #f5f5f5;
+    background-color: #333;
+  display: block;
+  width: 100%; 
+  height: auto; 
+  position: relative; 
+  z-index: 1;
+
+  border-left: 55px solid #f5f5f5;  
+  border-right: 65px solid #f5f5f5; 
+  border-top: none;   
+  border-bottom: none;              
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+}
+
+
+/*imagem de sobreposição*/
+.img-informações .topo {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  z-index: 5;
+  width: 1150px;
+  max-width: none;
+  height: auto;
+
+}
+
+/*coleções*/
+body {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/*coleções pai*/
+.geral-colecoes {
+  position: relative;
+  width: 100%;
+  max-width: 1234px;
+  height: 764px;
+  margin: 0 auto;
+  padding-top: 60px;
+}
+
+/*retangulo azul*/
+.gc {
+  position: absolute;
+  top: 0;
+  left: 127px;
+  width: 483px;
+  height: 210px;
+  background: #4DA1B1;
+  z-index: 1;
+}
+
+/*NOME COLEÇÕES*/
+.nome-coleções {
+  position: absolute;
+  top: 0;
+  left: 654px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 57px;
+  color: #000;
+  z-index: 2;
+}
+
+/*ver todas*/
+.ver-todas {
+  position: absolute;
+  top: 5px;
+  left: 892px;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 57px;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #000;
+  z-index: 2;
+}
+
+/*imagem da esquerda(produto)*/
+.imagem-5 {
+  position: absolute;
+  top: 100px;
+  left: -120px;
+  width: 440px;
+  height: 600px;
+  background: url('https://i.ibb.co/B5tRGVN4/image-5.png') center/cover no-repeat;
+  z-index: 1;
+}
+
+/*titulo coleção */
+.titulo-colecao {
+  position: absolute;
+  top: 48px;
+  left: 335px;
+  font-size: 50px;
+  line-height: 57px;
+  font-weight: 700;
+  color: #EFEFEF;
+  z-index: 2;
+}
+
+/*descrição coleção*/
+.descricao-colecao {
+  position: absolute;
+  top: 274px;
+  left: 373px;
+  width: 338px;
+  font-size: 20px;
+  line-height: 30px;
+  color: #000;
+  z-index: 2;
+}
+
+/*botão explorar*/
+.btn-explorar {
+  position: absolute;
+  top: 430px;
+  left: 373px;
+  width: 182px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background: transparent;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-explorar:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+/*formas decorativas auxilio(IA)*/
+.forma-33 {
+  position: absolute;
+  top: 86px;
+  left: 270px;
+  width: 568px;
+  height: 568px;
+  border: 2px dashed #000;
+  border-radius: 0px 530px 0px 0px;
+  z-index: 0;
+}
+
+.forma-34 {
+  position: absolute;
+  top: 66px;
+  left: 825px;
+  width: 298px;
+  height: 298px;
+  border: 2px dashed #000;
+  border-radius: 194.12px;
+  z-index: 0;
+}
+
+/*imagem da direita(gato)*/
+.imagem-25 {
+  position: absolute;
+  top: 190px;
+  left: 750px;
+  width: 475px;
+  height: 579px;
+  background: url("https://i.ibb.co/QFn4PSnK/image-25.png") center/cover no-repeat;
+  z-index: 1;
+}
+
+/*mais-informaçoes*/
+.icone-mais {
+  position: absolute;
+  top: 440px;
+  left: 855px;
+  width: 35px;
+  height: 35px;
+  z-index: 3;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.toggle-info {
+  display: none;
+}
+
+.circulo-mais {
+  width: 35px;
+  height: 35px;
+  background: #EFEFEF;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ponto-mais {
+  font-size: 26px;
+  color: #000;
+  user-select: none;
+}
+
+
+/* troca o símbolo para "−" quando ativado */
+.toggle-info:checked ~ .circulo-mais .ponto-mais {
+  content: "−";
+}
+
+/* caixa oculta inicialmente */
+.caixa-info {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background-color: #ffffff;
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 17px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 4;
+}
+
+/* exibe a caixa quando o checkbox está ativado */
+.toggle-info:checked ~ .caixa-info {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+
+/*loja pai*/
+.loja-grupo {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.loja-grupo {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  height: 700px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+/*queridinho do momento pai*/
+.grupo-queridinho {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 458px;
+  height: 601px;
+  z-index: 1;
+}
+
+/*circulo amarelo*/
+.circulo-amarelo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 206px;
+  height: 206px;
+  background: #FFE4B3;
+  border-radius: 50%;
+}
+
+/*titulo QM*/
+.titulo-queridinho {
+  position: absolute;
+  top: 110px;
+  left: 63px;
+  width: 295px;
+  font-size: 70px;
+  line-height: 74px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+/*botão ver tudo*/
+.btn-ver-tudo {
+  position: absolute;
+  top: 336px;
+  left: 82px;
+  width: 182px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background: transparent;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-ver-tudo:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+
+
+/*loja*/
+.produtos-lojapai {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 40px;
+  background-color: #f5f5f5;
+  margin-left: 300px;
+}
+
+.produto-loja {
+  position: relative;
+  width: 470px;
+  height: 450px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/*tags nos produtos*/
+.tag-azul {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4DA1B1;
+  padding: 4px 8px;
+  border-radius: 0px;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 5 ;
+}
+
+
+.tag-vermelha {
+  position: absolute;
+  top: 36px;
+  right: 10px;
+  background-color: #E5675D;
+  padding: 4px 8px;
+  border-radius: 0px;
+  font-family: 'Sora', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  z-index: 5;
+}
+/*imagem do produto*/
+.imagem-produto {
+  position: absolute;
+  top: 108px;         
+  left: 70px;         
+  width: 120px;
+  height: 160px;
+  background-image: url(https://i.ibb.co/SD1KVh8M/image-5.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* camada da imagem nova */
+.imagem-produto::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 220%;
+  height: 205%;
+  background-image: url('https://i.ibb.co/QFn4PSnK/image-25.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: -65px -105px; /* ESSENCIAL para o zoom partir do centro */
+  transition:
+    opacity 0.4s ease,
+    transform 0.1s ease;
+  z-index: 0;
+}
+
+.imagem-produto:hover::after {
+  opacity: 1;
+  transform: scale(1) translate(-65px, -105px);
+}
+
+
+
+
+/*nome do produto*/
+.titulo-produto {
+  position: absolute;
+  width: 107px;
+  height: 32px;
+  left: 10px;
+  top: 336px;
+
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #373737;
+
+}
+
+/*variações de cores*/
+.variacoes {
+  position: absolute;
+  bottom: 100px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.cor {
+  width: 10.6px;
+  height: 10.6px;
+  border-radius: 50%;
+  transform: rotate(90deg);
+}
+
+.cor-1 { background-color: #433643; }
+.cor-2 { background-color: #637C52; }
+.cor-3 { background-color: #BF362E; }
+.cor-4 { background-color: #7EABE3; }
+
+/*preço pai*/
+.precos {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*preço sem desconto(antigo)*/
+.preco-antigo {
+  position: absolute;
+  bottom: -377px;
+  left: -9px;
+  width: auto;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 200;
+  line-height: 15px;
+  text-decoration: line-through;
+  color: #373737;
+}
+
+/*preço com desconto(novo)*/
+.preco-novo {
+  position: absolute;
+  bottom: -377px;
+  left: 49px;
+  width: auto;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 15px;
+  color: #373737;
+}
+.btn-carrinho {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 250px;
+  height: 29px;
+  padding: 0 14px;
+  background-color: #f5f5f5;
+  border: 1px solid #000;
+  border-radius: 59px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: 
+    opacity 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.produto-loja:hover .btn-carrinho {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.icone-carrinho {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s ease;
+}
+
+.texto-btn {
+    white-space: nowrap;
+  transition: transform 0.3s ease;
+}
+
+.btn-carrinho:hover {
+  background-color: #fff;
+}
+
+.btn-carrinho:hover .texto-btn {
+  transform: translateX(45px);
+}
+
+.btn-carrinho:hover .icone-carrinho {
+  transform: scale(1.1);
+}
+
+
+
+/*titulo navegue*/
+.titulo-navegue {
+  position: absolute;
+  top: 650px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 668px;
+  font-size: 18px;
+  font-weight: 1000;
+  line-height: 23px;
+  letter-spacing: 10px;
+  text-align: center;
+  color: #000;
+}
+
+/*categorias*/
+.paicategorias {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  padding: 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.categorias {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 19px 32px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: #000;
+  height: 59px;
+  min-width: 180px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.categorias:hover {
+  background-color: #e0e0e0;
+  color: #000000;
+}
+.categorias img {
+  width: 48px;
+  height: auto;
+}
+
+
+/*coleçao do gato imagem*/
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Sora', sans-serif;
+}
+
+.destaque-colecao {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* preenche toda a tela */
+  overflow: hidden;
+}
+
+.fundo-imagem {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://i.ibb.co/G3V0Vmyw/Rectangle-53.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+/*informação de coleção*/
+.coleça-info {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  width: 282px;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 30px;
+  z-index: 2;
+}
+
+.coleça-info h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.coleça-info .descricao-SELEÇAO {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-bottom: 20px;
+}
+/*botão de ver seleção*/
+.btn-VER {
+  position: relative;
+  top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 24px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background: transparent;
+  font-family: 'Sora', sans-serif;
+  font-weight: 200px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-VER:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+/*numeros*/
+.numeros {
+  position: absolute;
+  z-index: 3;
+}
+
+.numero-wrapper {
+  position: absolute;
+}
+
+.numero {
+  width: 28px;
+  height: 28px;
+  background: #efefef;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #000;
+  line-height: 25px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.tooltip {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  background-color: #ffffff;
+  color: #000000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 200px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.numero-wrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/*posições individuais*/
+.num1 { left: 262px; top: 415px; }
+.num2 { left: 481px; top: 439px; }
+.num3 { left: 605px; top: 94px; }
+.num4 { left: 905px; top: 186px; }
+.num5 { left: 1004px; top: 410px; }
+
+/*institucional*/
+.institucional {
+  position: relative;
+  width: 1450px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #eeeeee;
+}
+
+/*decorar e arranhar*/
+.textoDAER-esquerda {
+  position: absolute;
+  top: 0;
+  left: 264px;
+  width: 272px;
+  height: 272px;
+}
+
+.circulo-vermelho {
+  width: 272px;
+  height: 272px;
+  background: #BB3735;
+  border-radius: 50%;
+}
+
+.titulo-esquerdaDAER {
+  position: absolute;
+  top: 73px;
+  left: -165px;
+  width: 396px;
+  font-size: 70px;
+  line-height: 88px;
+  font-weight: 400;
+  color: #373737;
+}
+
+/*video institucional*/
+.video-imagem {
+  position: absolute;
+  top: 26px;
+  left: 720px;
+  width: 505px;
+  height: 284px;
+  background-color: #D9D9D9;
+  overflow: hidden;
+}
+
+.video-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/*icone de play*/
+.play-circulo {
+  position: absolute;
+  top: 100px;
+  left: 206px;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-icone {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+/*descrição*/
+.descricao-video {
+  position: absolute;
+  top: 340px;
+  left: 720px;
+  width: 505px;
+  font-size: 14px;
+  line-height: 25px;
+  color: #373737;
+}
+
+/*botão mais*/
+.btn-mais-sobre {
+  position: absolute;
+  top: 480px;
+  left: 720px;
+  width: 295px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background: transparent;
+  font-family: 'Sora', sans-serif;
+  font-weight: 400px;
+  font-style: regular;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-mais-sobre:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/*comunidade pai*/
+.comunidade {
+  position: relative;
+  width: 100%;
+  padding: 90px 0px;
+  background-color: #fff;
+  overflow: visible;
+}
+/*textos comunidade*/
+.texto-comunidade {
+  position: absolute;
+  width: 499px;
+  height: auto;
+  left: 236px;
+  top: 117px;
+
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 20px;
+  line-height: 25px;
+  color: #373737;
+
+  text-align: left;
+}
+
+
+.hashtag {
+  position: absolute;
+  top: 165px;
+  left: 230px;
+  z-index: 10;
+  font-family: 'Sora', sans-serif;
+  font-style: normal;
+  font-weight: 200;
+  font-size: 90px;
+  line-height: 1.1;
+  color: #7EB4C8;
+  margin: 0;
+  pointer-events: none;
+}
+/*card dos gatos*/
+.cards-comunidade {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 140px 15px 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100vw;
+  box-sizing: border-box;
+  scroll-snap-type: x mandatory; /*usei pra animação do card sob o mouse*/
+  scrollbar-width: none;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 290px;
+  height: 581px;
+  background-color: #D9D9D9;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+}
+
+/* Botão do like*/
+.like {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 10px 12px;
+  border-radius: 45px;
+  box-sizing: border-box;
+}
+
+.heart {
+  width: 25px;
+  height: 30px;
+  background-image: url('https://i.ibb.co/zhMnVkVc/coracao-2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.like span {
+  font-size: 13px;
+  color: #fff;
+  line-height: 1;
+}
+
+
+/*newleast*/
+body {
+  margin: 0;
+  font-family: 'Sora', sans-serif;
+  background-color: #f5f5f5;
+}
+
+/* Container principal */
+.optin {
+  position: relative;
+  width: 1240px;
+  height: 487px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+/*linha superior*/
+.linha-superior {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1240px;
+  height: 0;
+  border: 1px solid #000;
+}
+
+/*imagem à esquerda*/
+.imagem-nl {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 505px;
+  height: 347px;
+  background: url('https://i.ibb.co/gZdNLXbt/Rectangle-5.png') center/cover, #D9D9D9;
+}
+
+/*titulo*/
+.titulo-nl {
+  position: absolute;
+  top: 107px;
+  left: 540px;
+  font-size: 50px;
+  line-height: 63px;
+  font-weight: 400;
+  color: #373737;
+}
+
+/*subtitulo*/
+.subtitulo-nl {
+  position: absolute;
+  top: 204px;
+  left: 545px;
+  width: 274px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 25px;
+  color: #373737;
+}
+
+/*descrição*/
+.descricao-nl {
+  position: absolute;
+  top: 256px;
+  left: 545px;
+  width: 295px;
+  font-size: 14px;
+  line-height: 25px;
+  color: #373737;
+}
+
+/*informações*/
+.inf-pet {
+  position: absolute;
+  top: 204px;
+  left: 860px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.inf-email {
+  position: absolute;
+  top: 266px;
+  left: 860px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+/*linhas estilização*/
+.linha {
+  position: absolute;
+  width: 400px;
+  height: 0;
+  border: 1px solid #000;
+}
+
+.linha-2 {
+  top: 229px;
+  left: 860px;
+}
+
+.linha-3 {
+  top: 291px;
+  left: 860px;
+}
+
+/*botão de cadastro*/
+.btn-cadastrar {
+  position: absolute;
+  top: 328px;
+  left: 860px;
+  width: 188px;
+  height: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  gap: 10px;
+  border: 1px solid #000;
+  border-radius: 29px;
+  background: transparent;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cadastrar:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+.foto-final {
+  background: url("https://i.postimg.cc/HLB7bXv3/temp-Imagew8z-ZWl.avif") no-repeat center center;
+  background-size: cover;  /* cobre toda a largura */
+  width: 100%;
+  height: 250px;           /* ajuste conforme sua imagem */
+}

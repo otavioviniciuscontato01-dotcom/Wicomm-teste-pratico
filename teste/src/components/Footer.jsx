@@ -31,8 +31,8 @@ export default function Footer() {
 
       
 <div class="logos">
-  <img src="https://i.ibb.co/5xkX1gnh/image.png" alt="Instagram" />
-  <img src="https://i.ibb.co/Xk7h96r6/image.png" alt="YouTube" />
+  <img src="https://i.ibb.co/fYZZ484H/image.png" alt="Instagram" />
+  <img src="https://i.ibb.co/xKvW7rtz/image.png" alt="YouTube" />
   <img src="https://i.ibb.co/Jjk8KYR7/image.png" alt="LinkedIn" />
   <img src="https://i.ibb.co/3mqq3xpv/image.png" alt="Facebook" />
 </div>

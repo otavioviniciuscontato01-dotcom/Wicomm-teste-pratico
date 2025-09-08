@@ -1,38 +1,38 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html, body {
+  width: 100%;
+  min-height: 80%;
+  overflow-x: hidden;
   font-family: 'Sora', sans-serif;
+  background-color: #000000;
 }
-
-/*navbar pai*/
+/*navbar*/
 .nav-hdr {
   position: absolute;
-  top: 30px;
-  left: 10px;
-  width: 1280px;
+  top: 20px;
+  left: 45%;
+  transform: translateX(-50%);
+  width: 90vw;
+  max-width: 1250px;
   height: 46px;
   z-index: 1000;
 }
-
-/*parte branca*/
+/*parte branca da logo*/
 .nav-bg-left {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 100%;
+  top: 10;
+  left: 15;
+  width: 40vw;
+  height: 46px;
   background: #f5f5f5;
   border: 1px solid #f5f5f5;
-  box-sizing: border-box;
 }
 
-/*parte preta*/
 .nav-bg-right {
   position: absolute;
   top: 0;
@@ -41,12 +41,9 @@ body {
   height: 100%;
   background: #1E1E1E;
   border: 1px solid #f5f5f5;
-  box-sizing: border-box;
 }
-
-/*logo*/
+/*logo navbar*/
 .logo {
-  cursor: pointer;
   position: absolute;
   top: 10px;
   left: 10px;
@@ -55,20 +52,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .logo img {
-  width: 400px;
-  height: 200px;
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: auto;
   object-fit: contain;
 }
-
-/*botões do lado da logo*/
+/*botoes do lado da logo*/
 .menu-produtos,
 .menu-colecoes {
-  cursor: pointer;
   position: absolute;
   top: 0;
   width: 150px;
@@ -76,19 +70,14 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid #f5f5f5;
-  background: #1E1E1E;
-  box-sizing: border-box;
   padding-left: 10px;
+  background: #1E1E1E;
+  border: 1px solid #f5f5f5;
+  cursor: pointer;
 }
 
-.menu-produtos {
-  left: 10.08%;
-}
-
-.menu-colecoes {
-  left: 21%;
-}
+.menu-produtos { left: 10.08%; }
+.menu-colecoes { left: 21%; }
 
 .menu-icon {
   width: 24px;
@@ -105,13 +94,12 @@ body {
 }
 
 .menu-text {
-  font-family: 'Sora', sans-serif;
   font-weight: 200;
   font-size: 20px;
-  line-height: 20px;
   color: #EFEFEF;
-
+  position: relative;
 }
+/*animaçao do ponteiro*/
 .menu-text span::after {
   content: "";
   position: absolute;
@@ -126,28 +114,26 @@ body {
 .menu-text span:hover::after {
   width: 100%;
 }
-
-/*menu central*/
+/*menu de blog até wishlist*/
 .menu-maior {
   position: absolute;
   top: 50%;
-  left: calc(50% - 297px/2 + 270px);
-  transform: translateY(-50%);
+  left: calc(50% - 297px/2 + 250px);
+  transform: translateY(-40%);
   display: flex;
   gap: 20px;
   font-size: 14px;
   font-weight: 400;
   color: #f5f5f5;
 }
-
+/*sublinhado animaçao*/
 .menu-maior span {
   position: relative;
   cursor: pointer;
   padding-bottom: 4px;
   transition: color 0.3s ease;
 }
-
-/* efeito sublinhado animado */
+/*cor da animaçao*/
 .menu-maior span::after {
   content: "";
   position: absolute;
@@ -164,16 +150,12 @@ body {
 .menu-maior span:hover::after {
   transform: scaleX(1);
 }
-.menu-text:hover {
-  color: #bababa;
-}
 
+.menu-text:hover,
 .menu-maior span:hover {
   color: #bababa;
 }
-
-
-/* barra de busca */
+/*area de pesquisa*/
 .busca {
   position: absolute;
   top: 0;
@@ -184,10 +166,9 @@ body {
   align-items: center;
   padding: 0 12px;
   gap: 10px;
-  color: #ffffff;
   background: #1E1E1E;
   border: 1px solid #f5f5f5;
-  box-sizing: border-box;
+  color: #ffffff;
 }
 
 .search-icon {
@@ -201,25 +182,18 @@ body {
   background: transparent;
   border: none;
   outline: none;
-  font-family: 'Sora', sans-serif;
-  font-weight: 100;
-  font-size: 2px;
-  line-height: 14px;
+  font-size: 14px;
   color: #f5f5f5;
 }
 
 .search-input::placeholder {
   color: #aaa;
 }
-
-
-
-/*área de conta*/
+/*area do usuario*/
 .conta {
-  cursor: pointer;
   position: absolute;
   top: 0;
-  left: 101%;
+  left: calc(82% + 230px);
   width: 50px;
   height: 46px;
   background: #1E1E1E;
@@ -227,10 +201,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-sizing: border-box;
+  cursor: pointer;
 }
 
-/*icone do usuário*/
 .user-icon {
   width: 24px;
   height: 24px;
@@ -247,14 +220,12 @@ body {
   height: 100%;
   object-fit: contain;
 }
-
-/*carrinho*/
+/*area do carrinho*/
 .carrinho-icon {
-  cursor: pointer;
-  position: relative;
-  left: 1340px;
-  top: 0px;
-  width: 79.8px;
+  position: absolute;
+  top: 0;
+  left: calc(82% + 280px);
+  width: 90px;
   height: 46px;
   background: #1e1e1e;
   border: 1px solid #f5f5f5;
@@ -262,6 +233,7 @@ body {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .carrinho-icon img {
@@ -285,160 +257,243 @@ body {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 1300px) {
+  .nav-hdr {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #1E1E1E;
+    box-sizing: border-box;
+  }
 
+  .nav-bg-left,
+  .nav-bg-right {
+    display: none;
+  }
 
-/*BANNER PRINCIPAL*/
+  .logo {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .menu-produtos,
+  .menu-colecoes,
+  .menu-maior,
+  .busca,
+  .conta,
+  .carrinho-icon {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .menu-maior {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    font-size: 13px;
+  }
+
+  .search-input {
+    font-size: 13px;
+  }
+
+  .btn,
+  .menu-text span,
+  .menu-maior span {
+    font-size: 16px;
+  }
+
+  .notification {
+    top: 2px;
+    right: 2px;
+    width: 14px;
+    height: 14px;
+    font-size: 9px;
+  }
+}
+
+/*area do banner inicial*/
 html, body {
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: 'Sora', sans-serif;
+}
+
+/*banner*/
+.banner-inicial {
+  position: relative;
+  width: 100%;
+  height: 78vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-principal {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-top: 8px solid #f1f1f1;
+  border-bottom: 10px solid #1E1E1E;
+}
+
+/*imagem completando a horizontal*/
+.banner-principal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*texto central*/
+.banner-texto {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  text-align: center;
+  z-index: 2;
+}
+
+/*botão central*/
+.btn {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 25px;
+  text-transform: uppercase;
+  z-index: 2;
+}
+@media (max-width: 1200px) {
+  .banner-inicial {
+    height: auto;
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .banner-principal {
+    height: auto;
+    border-top: 6px solid #f1f1f1;
+    border-bottom: 8px solid #1E1E1E;
+  }
+
+  .banner-principal img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .banner-texto {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .btn {
+    font-size: 18px;
+    padding: 10px 16px;
+    margin-top: 10px;
+  }
+}
+
+
+
+/*janela abaixo do banner*/
+.beneficios {
+  text-align: center;
+  z-index: 20;
+  width: 100%;
   overflow-x: hidden;
 }
 
-.banner-inicial {
-  display: flex;
-  width: 100vw;
-  align-items: stretch; 
-  height: 600px;
-  min-height: 0;
-
-
-}
-
-/*bordas*/
-.bordae {
-  flex-grow: 0; 
-  border-top: 10px solid #f5f5f5;
-  border-bottom: 10px solid #f5f5f5;
-  height: auto;
-  object-fit: cover;
-  width: auto;
-  max-height: 100%; 
-}
-
-.bordad {
-  flex-grow: 1; 
-  border-top: 10px solid #f5f5f5;
-  border-bottom: 10px solid #f5f5f5;
-  height: auto;
-  object-fit: cover;
-  width: auto;
-  max-height: 100%; 
-}
-
-/*banner central*/
-.banner-principal {
+.img-informações {
   position: relative;
-  width: 1350px;
-  flex-shrink: 1;
-  max-height: 600px; 
-  overflow: hidden; 
-  
-  border-top: 10px solid #f5f5f5;
-  border-bottom: 10px solid #f5f5f5;
-  border-bottom: 10px solid #1E1E1E;
-  background: #fff;
-
-  box-sizing: border-box;
-}
-
-.banner-principal img {
-  width: 100%;
-  height: 100%; 
-  object-fit: cover; 
   display: block;
-
-  border-top: none;
-  border-right: 15px solid #f5f5f5;
-  border-left: 15px solid #f5f5f5;
-  box-sizing: border-box;
-}
-
-
-.banner-principal .banner-texto {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, 3px);
   width: 100%;
-  text-align: center;
-  color: #000;
-
-}
-.container {
-  position: relative;
-  height: 500vh; 
+  background-color: #333;
+  overflow: hidden;
 }
 
-/*botão ver coleção*/
-.btn {
-  position: absolute;
-  top: calc(50% + 290px); 
-  left: 50%;
-  transform: translate(-50%, -50%); 
-
-  padding: 20px 30px;
-  border: 1px solid #000000;
-  background: #000000;
-  color: #ffffff;
-  cursor: pointer;
-  border-radius: 30px;
-  display: inline-block;
-
-  font-family: 'Sora', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 20px;
-  text-transform: uppercase;
-  color: #ffffff;
+.img-informações .fundo {
+  display: block;
+  width: 100%;
+  height: auto;
+  background-color: #f5f5f5;
+  border-left: 55px
 }
-
-/*beneficios*/
-.beneficios {
-  text-align: center; 
-  z-index: 20;
-}
-
 /*pai das imagens*/
 .img-informações {
-    background-color: #333;
-  position: relative; 
-  display: inline-block;
-  width: 100%; 
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: #333;
+  overflow: hidden;
 }
 
 /*imagem de fundo*/
 .img-informações .fundo {
-  border: 30px solid #f5f5f5;
-    background-color: #333;
   display: block;
-  width: 100%; 
-  height: auto; 
-  position: relative; 
-  z-index: 1;
-
-  border-left: 55px solid #f5f5f5;  
-  border-right: 65px solid #f5f5f5; 
-  border-top: none;   
-  border-bottom: none;              
+  width: 100%;
+  height: auto;
   background-color: #f5f5f5;
   box-sizing: border-box;
+  border-left: 55px solid #f5f5f5;
+  border-right: 55px solid #f5f5f5;
+  border-top: none;
+  border-bottom: none;
+  z-index: 1;
+  position: relative;
 }
-
 
 /*imagem de sobreposição*/
 .img-informações .topo {
   position: absolute;
-  top: 50%; 
-  left: 50%; 
-  transform: translate(-50%, -50%); 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 5;
-  width: 1150px;
-  max-width: none;
-  height: auto;
-
+  width: 85%;
+  max-width: 1150px;
 }
+
+@media (max-width: 1000px) {
+  .img-informações .topo {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .img-informações .fundo {
+    border-left: 20px solid #f5f5f5;
+    border-right: 20px solid #f5f5f5;
+  }
+}
+
 
 /*coleções*/
 body {
@@ -621,13 +676,7 @@ body {
   user-select: none;
 }
 
-
-/* troca o símbolo para "−" quando ativado */
-.toggle-info:checked ~ .circulo-mais .ponto-mais {
-  content: "−";
-}
-
-/* caixa oculta inicialmente */
+/*caixa oculta inicialmente*/
 .caixa-info {
   position: absolute;
   top: -60px;
@@ -652,6 +701,83 @@ body {
   pointer-events: auto;
 }
 
+@media (max-width: 1000px) {
+  .geral-colecoes {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .gc,
+  .forma-33,
+  .forma-34 {
+    display: none;
+  }
+
+  .imagem-5,
+  .imagem-25 {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .titulo-colecao,
+  .descricao-colecao,
+  .btn-explorar,
+  .nome-coleções,
+  .ver-todas,
+  .icone-mais {
+    position: static;
+    margin: 10px auto;
+    text-align: center;
+  }
+
+  .btn-explorar {
+    width: auto;
+    padding: 12px 24px;
+  }
+}
+@media (min-width: 1000px) {
+  .geral-colecoes {
+    max-width: 1440px;
+    padding-top: 80px;
+  }
+
+  .titulo-colecao {
+    font-size: 60px;
+    line-height: 64px;
+    left: 360px;
+  }
+
+  .descricao-colecao {
+    font-size: 22px;
+    line-height: 32px;
+    left: 400px;
+    width: 380px;
+  }
+
+  .btn-explorar {
+    left: 400px;
+    font-size: 22px;
+    padding: 14px 28px;
+  }
+
+  .imagem-5 {
+    left: -140px;
+    width: 480px;
+    height: 640px;
+  }
+
+  .imagem-25 {
+    left: 780px;
+    width: 500px;
+    height: 600px;
+  }
+
+  .icone-mais {
+    left: 880px;
+  }
+}
 
 /*loja pai*/
 .loja-grupo {
@@ -746,6 +872,7 @@ body {
   margin-left: 300px;
 }
 
+
 .produto-loja {
   position: relative;
   width: 470px;
@@ -798,7 +925,7 @@ body {
   background-repeat: no-repeat;
 }
 
-/* camada da imagem nova */
+/*camada da segunda imagem*/
 .imagem-produto::after {
   content: "";
   position: absolute;
@@ -813,7 +940,7 @@ body {
 
   opacity: 0;
   transform: scale(0.6);
-  transform-origin: -65px -105px; /* ESSENCIAL para o zoom partir do centro */
+  transform-origin: -65px -105px;
   transition:
     opacity 0.4s ease,
     transform 0.1s ease;
@@ -975,17 +1102,27 @@ body {
   text-align: center;
   color: #000;
 }
+@media (max-width: 1000px) {
+  .titulo-navegue {
+    top: auto;
+    margin-top: 40px;
+    font-size: 16px;
+    letter-spacing: 6px;
+    width: 90%;
+  }
+}
+
 
 /*categorias*/
 .paicategorias {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-  padding: 80px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 20px;
   max-width: 1440px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
 .categorias {
@@ -1027,10 +1164,22 @@ body, html {
 .destaque-colecao {
   position: relative;
   width: 100%;
-  height: 100vh; /* preenche toda a tela */
+  height: 100vh; 
   overflow: hidden;
 }
+@media (max-width: 1300px) {
+  .categorias {
+    font-size: 18px;
+    padding: 14px 24px;
+    min-width: 140px;
+    height: auto;
+  }
 
+  .categorias img {
+    width: 36px;
+  }
+}
+/*imagem com numeros*/
 .fundo-imagem {
   position: absolute;
   top: 0;
@@ -1142,11 +1291,69 @@ body, html {
 }
 
 /*posições individuais*/
-.num1 { left: 262px; top: 415px; }
+.num1 { left: 262px; top: 365px; }
 .num2 { left: 481px; top: 439px; }
-.num3 { left: 605px; top: 94px; }
-.num4 { left: 905px; top: 186px; }
-.num5 { left: 1004px; top: 410px; }
+.num3 { left: 590px; top: 94px; }
+.num4 { left: 850px; top: 156px; }
+.num5 { left: 930px; top: 380px; }
+
+@media (max-width: 1000px) {
+  .destaque-colecao {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .coleça-info {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 90%;
+    max-width: 320px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .coleça-info h2 {
+    font-size: 24px;
+  }
+
+  .coleça-info .descricao-SELEÇAO {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .btn-VER {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+  }
+
+  .numeros {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .numero-wrapper {
+    position: relative;
+  }
+
+  .tooltip {
+    top: 40px;
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  .num1, .num2, .num3, .num4, .num5 {
+    position: relative;
+    top: auto;
+    left: auto;
+  }
+}
 
 /*institucional*/
 .institucional {
@@ -1258,6 +1465,85 @@ body, html {
   background-color: #000000;
   color: #ffffff;
 }
+@media (max-width: 1000px) {
+  .institucional {
+    width: 100%;
+    height: auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .textoDAER-esquerda {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+  }
+
+  .circulo-vermelho {
+    width: 100%;
+    height: 100%;
+  }
+
+  .titulo-esquerdaDAER {
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .video-imagem {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin: 20px 0;
+  }
+
+  .video-imagem img {
+    height: auto;
+  }
+
+  .play-circulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .descricao-video {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 500px;
+    font-size: 14px;
+    line-height: 22px;
+    text-align: center;
+    margin: 20px 0;
+  }
+
+  .btn-mais-sobre {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-width: 300px;
+    margin: 0 auto 40px;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
 
 /*comunidade pai*/
 .comunidade {
@@ -1303,6 +1589,7 @@ body, html {
 /*card dos gatos*/
 .cards-comunidade {
   display: flex;
+  justify-content: center; /* centraliza os cards */
   flex-direction: row;
   gap: 20px;
   padding: 140px 15px 20px;
@@ -1310,14 +1597,15 @@ body, html {
   white-space: nowrap;
   width: 100vw;
   box-sizing: border-box;
-  scroll-snap-type: x mandatory; /*usei pra animação do card sob o mouse*/
+  scroll-snap-type: x mandatory;
   scrollbar-width: none;
+
 }
 
 .card {
   flex: 0 0 auto;
   width: 290px;
-  height: 581px;
+  height: 580px;
   background-color: #D9D9D9;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
@@ -1362,6 +1650,59 @@ body, html {
   font-size: 13px;
   color: #fff;
   line-height: 1;
+}
+@media (max-width: 1000px) {
+  .texto-comunidade {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    left: auto;
+    top: auto;
+    margin: 0 auto 20px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .hashtag {
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: 60px;
+    text-align: center;
+    margin: 10px auto 30px;
+  }
+
+  .cards-comunidade {
+    padding: 40px 15px 20px;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    width: 240px;
+    height: auto;
+  }
+
+  .card img {
+    height: auto;
+    max-height: 400px;
+  }
+
+  .like {
+    bottom: 10px;
+    right: 10px;
+    padding: 8px 10px;
+  }
+
+  .heart {
+    width: 20px;
+    height: 24px;
+  }
+
+  .like span {
+    font-size: 12px;
+  }
 }
 
 
@@ -1498,9 +1839,395 @@ body {
   background-color: #000000;
   color: #ffffff;
 }
-.foto-final {
-  background: url("https://i.postimg.cc/HLB7bXv3/temp-Imagew8z-ZWl.avif") no-repeat center center;
-  background-size: cover;  /* cobre toda a largura */
-  width: 100%;
-  height: 250px;           /* ajuste conforme sua imagem */
+@media (max-width: 1300px) {
+  .optin {
+    width: 100%;
+    height: auto;
+    margin-top: 60px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+  }
+
+  .linha-superior {
+    display: none;
+  }
+
+  .imagem-nl {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .titulo-nl {
+    position: relative;
+    top: auto;
+    left: auto;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .subtitulo-nl,
+  .descricao-nl {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .inf-pet,
+  .inf-email {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .linha-2,
+  .linha-3 {
+    display: none;
+  }
+
+  .btn-cadastrar {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: auto;
+    max-width: 250px;
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 }
+/*footer*/
+.footer-container {
+  position: relative;
+  width:85%;
+  height: 214px;
+  left: 100px;
+  top: 0px;
+}
+
+.footer-dark {
+  position: absolute;
+  left: 0%;
+  right: 83.06%;
+  top: 0%;
+  bottom: 11.68%;
+  background: #373737;
+}
+
+.footer-light {
+  position: absolute;
+  left: 16.94%;
+  right: 0%;
+  top: 0%;
+  bottom: 11.68%;
+  background: transparent;
+  border: 1px solid #373737;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.title {
+  position: absolute;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.produtos {
+  left: 18.23%;
+  right: 75.97%;
+  top: 8.88%;
+  bottom: 86.92%;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #373737;
+}
+
+.pagamento {
+  left: 18.23%;
+  right: 68.95%;
+  top: 30.84%;
+  bottom: 64.95%;
+}
+.pagamento img {
+  filter: grayscale(100%);
+}
+.pagamento img:hover {
+  filter: grayscale(100%);
+}
+
+.certificados {
+  left: 35.16%;
+  right: 49.68%;
+  top: 30.84%;
+  bottom: 64.95%;
+}
+
+.colecoes {
+  left: 26.21%;
+  right: 68.23%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.lookbook {
+  left: 33.95%;
+  right: 60%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.sobre {
+  left: 42.18%;
+  right: 54.35%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.wishlist {
+  left: 47.82%;
+  right: 47.26%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.blog {
+  left: 54.92%;
+  right: 42.18%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.ajuda {
+  left: 60.97%;
+  right: 35.4%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.contato {
+  left: 77.1%;
+  right: 17.74%;
+  top: 8.88%;
+  bottom: 86.92%;
+}
+
+.redes-sociais {
+  left: 77.1%;
+  right: 15.08%;
+  top: 57.48%;
+  bottom: 38.32%;
+}
+
+.line {
+  position: relative;
+  border: 1px solid #000000;
+}
+
+.line-5 {
+  position: relative;
+  left: 16.94%;
+  top: 21.96%;
+  width: 524px;
+  bottom: 0%;
+}
+
+.line-8 {
+  position: relative;
+  left: 75.50%;
+  top: 46.26%;
+  width: 300px;
+  bottom: 0%;
+}
+
+.line-6 {
+  position: relative;
+  left: 52%;
+  right: 0%;
+  top: 42%;
+  height: 0px;
+  width: 188px;
+  bottom: 00px;
+  transform: rotate(90deg);
+}
+
+.line-9 {
+  position: relative;
+  left:330px;
+  right: 0%;
+  top: 52%;
+  height: 0px;
+  width: 140px;
+  bottom: 0px;
+  transform: rotate(90deg);
+}
+
+.line-7 {
+  position: relative;
+  left: 830px;
+  right: 0%;
+  top: 40%;
+  height: 0px;
+  width: 187px;
+  bottom: 0px;
+  transform: rotate(90deg);
+}
+
+.text-content {
+  position: absolute;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 12px;
+  line-height: 25px;
+  color: #373737;
+}
+
+.faq-content {
+  left: 60.97%;
+  right: 27.5%;
+  top: 20.56%;
+  bottom: 16.82%;
+}
+
+.contato-content {
+  left: 77.1%;
+  right: 9.19%;
+  top: 20.56%;
+  bottom: 63.55%;
+}
+
+.logo-vertical {
+  position: absolute;
+  left: 4.4%;
+  top: 15.56%;
+  width: 100px; /* ou mais, se necessário */
+  height: auto; /* ou defina uma altura maior */
+}
+
+.logo-vertical img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.logos {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+  left: 77.1%;
+  top: 70.09%;
+  padding: 8px;
+}
+
+.logos img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logos img:hover {
+  transform: scale(1.1);
+  filter: grayscale(100%);
+}
+
+.payment-methods {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  left: 230px;
+  top: 80px;
+  gap: 8px;
+  padding: 8px;
+  width: 40%;
+  max-width: 140px;
+}
+.payment-icon {
+  left: 10px;
+  width: 20px;
+  height: 30px;
+  object-fit: contain;
+}
+
+
+.security-wrapper {
+  display: flex;
+  gap: 5px;
+  position: relative;
+  left: 400px;
+  top: 60px;
+  padding: 5px;
+}
+
+.security {
+  width: 84px;
+  height: 84px;
+}
+
+.security img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-top: -70px;
+}
+
+
+
+
+.copyright {
+  position: absolute;
+  left: 0.16%;
+  right: 79.84%;
+  top: 96.73%;
+  bottom: 0%;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.address {
+  position: absolute;
+  left: 57.42%;
+  right: 0%;
+  top: 96.73%;
+  bottom: 0%;
+  font-family: 'Sora';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 25px;
+  text-align: right;
+  color: #000000;
+}
+
+  
+

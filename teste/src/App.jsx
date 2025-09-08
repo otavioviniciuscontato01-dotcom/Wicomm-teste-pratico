@@ -1,27 +1,27 @@
 // src/App.jsx
 import React from 'react';
-
-// Importe os componentes que vamos criar
-import Header from './components/Header';
-import Banner from './components/Banner';
-import Benefits from './components/Benefits';
-import Collections from './components/Collections';
-import Store from './components/Store';
-import Categories from './components/Categories';
-import FeaturedCollection from './components/FeaturedCollection';
-import InstitutionalVideo from './components/InstitutionalVideo';
-import Community from './components/Community';
-import Newsletter from './components/Newsletter';
-import Footer from './components/Footer';
+import { Suspense } from 'react';
+import './style.css';
 
 
 
-// Não precisamos de um App.css separado se todo o CSS estiver em index.css
-// ou se cada componente tiver seu próprio CSS.
+const Header = React.lazy(() => import('./components/Header'));
+const Banner = React.lazy(() => import('./components/Banner'));
+const Benefits = React.lazy(() => import('./components/Benefits'));
+const Collections = React.lazy(() => import('./components/Collections'));
+const Store = React.lazy(() => import('./components/Store'));
+const Categories = React.lazy(() => import('./components/Categories'));
+const FeaturedCollection = React.lazy(() => import('./components/FeaturedCollection'));
+const InstitutionalVideo = React.lazy(() => import('./components/InstitutionalVideo'));
+const Community = React.lazy(() => import('./components/Community'));
+const Newsletter = React.lazy(() => import('./components/Newsletter'));
+const Footer = React.lazy(() => import('./components/Footer'));
+
+
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<div>Carregando...</div>}>
       <Header />
       <Banner />
       <Benefits />
@@ -33,7 +33,7 @@ function App() {
       <Community />
       <Newsletter />
       <Footer />
-    </>
+    </Suspense>
   );
 }
 
